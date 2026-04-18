@@ -1,0 +1,52 @@
+{
+  "name": "openclaw-marketing-kit",
+  "version": "1.0.0",
+  "description": "OpenClaw 营销自动化工具包 - 让你的 AI 助手帮你干活",
+  "main": "index.js",
+  "bin": {
+    "oc-marketing": "./cli.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "rss": "node scripts/rss-aggregator.js",
+    "seo": "node scripts/seo-reporter.js",
+    "discord": "node scripts/discord-poster.js",
+    "skills-track": "node scripts/skills-trending-tracker.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "openclaw",
+    "ai-agent",
+    "marketing",
+    "automation",
+    "rss",
+    "seo",
+    "discord"
+  ],
+  "author": "妙趣AI <miaoquai.com>",
+  "license": "MIT",
+  "homepage": "https://miaoquai.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jingchang0623-crypto/openclaw-marketing-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jingchang0623-crypto/openclaw-marketing-kit/issues"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0",
+    "axios": "^1.6.0",
+    "cheerio": "^1.0.0-rc.12",
+    "node-cron": "^3.0.3",
+    "nodemailer": "^6.9.7",
+    "commander": "^11.1.0",
+    "chalk": "^4.1.2",
+    "ora": "^5.4.1"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
