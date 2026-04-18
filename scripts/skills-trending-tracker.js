@@ -30,7 +30,7 @@ const BASELINE_REPOS = [
  */
 function searchRepos(query, sort = 'stars', limit = 20) {
   try {
-    const cmd = `gh search repos "${query}" --sort ${sort} --limit ${limit} --json fullName,description,url,stargazersCount,pushedAt,primaryLanguage,topics`;
+    const cmd = `gh search repos "${query}" --sort ${sort} --limit ${limit} --json fullName,description,url,stargazersCount,pushedAt,language`;
     const result = execSync(cmd, { encoding: 'utf8', timeout: 30000 });
     return JSON.parse(result);
   } catch (error) {
@@ -142,7 +142,7 @@ function generateReport(results) {
 
   risingStars.forEach((repo, index) => {
     const desc = repo.description ? repo.description.substring(0, 60).replace(/\|/g, '/') + '...' : '暂无描述';
-    const lang = repo.primaryLanguage || '未知';
+    const lang = repo.language || '未知';
     markdown += `| ${index + 1} | [${repo.fullName}](${repo.url}) | ${desc} | ${repo.stargazersCount} | ${lang} |\n`;
   });
 
